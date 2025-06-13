@@ -16,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button buttonAdd, buttonSub, buttonMul;
+    Button buttonAdd, buttonSub, buttonMul, buttonDiv;
     EditText editTextN1, editTextN2;
     TextView textView;
     int num1, num2;
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonAdd = findViewById(R.id.btn_add);
         buttonSub = findViewById(R.id.btn_minus);
         buttonMul = findViewById(R.id.btn_multiply);
+        buttonDiv = findViewById(R.id.btn_divide);
         editTextN1 = findViewById(R.id.number1);
         editTextN2 = findViewById(R.id.number2);
         textView = findViewById(R.id.answer);
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonAdd.setOnClickListener(this);
         buttonSub.setOnClickListener(this);
         buttonMul.setOnClickListener(this);
+        buttonDiv.setOnClickListener(this);
     }
 
     @Override
@@ -65,6 +67,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if ( v.getId() == R.id.btn_multiply ) {
             textView.setText("Answer = " + (num1 * num2));
+        }
+
+        if ( v.getId() == R.id.btn_divide ) {
+            textView.setText("Answer = " + ( (float) num1 / (float) num2));
         }
     }
 }
